@@ -1,0 +1,165 @@
+PRAC 8,9,10
+
+
+1] Calculator
+CODE:
+
+from tkinter import *
+root = Tk()
+root.title("Simple Calculator")
+e1 = Entry(root)
+e2 = Entry(root)
+l = Label(root)
+def add():
+    result = int(e1.get()) + int(e2.get())
+    l.config(text="Addition = %s" % result)
+def sub():
+    result = int(e1.get()) - int(e2.get())
+    l.config(text="Subtraction = %s" % result)
+def mul():
+    result = int(e1.get()) * int(e2.get())
+    l.config(text="Multiplication = %s" % result)
+def div():
+    result = int(e1.get()) / int(e2.get())
+    l.config(text="Division = %s" % result)
+a = Button(root, text="Add", command=add)
+b = Button(root, text="Subtract", command=sub)
+c = Button(root, text="Multiply", command=mul)
+d = Button(root, text="Divide", command=div)
+for widget in (e1, e2, a, b, c, d, l):
+    widget.pack()
+root.mainloop()
+
+======================================================================
+
+
+2] Simple Interest Form.
+CODE:
+
+def simple_interest():
+    principal=int(e1.get())
+    rate=int(e2.get())
+    time=int(e3.get())
+    SI=(principal*rate*time)/100
+    l.config(text="Simple Interest= %.2f"% SI)
+root = Tk()
+root.title("Simple Interest Form")
+Label(root,text="Principal: ").pack()
+e1=Entry(root)
+e1.pack()
+Label(root,text="Rate: ").pack()
+e2=Entry(root)
+e2.pack()
+Label(root,text="Time: ").pack()
+e3=Entry(root)
+e3.pack()
+b=Button(root,text="Calculate",command=simple_interest)
+b.pack()
+l=Label(root)
+l.pack()
+root.mainloop()
+
+============================================================================
+
+
+Practical No : 9
+
+* BMI calculator GUI form
+CODE :
+
+import tkinter as tk
+from tkinter import messagebox
+def calculate_bmi():
+    try:
+        weight = float(weight_entry.get())
+        height = float(height_entry.get())
+        bmi = weight / (height ** 2)
+        result_label.config(text=f"BMI: {bmi:.2f}")
+    except ValueError:
+        messagebox.showerror("Input Error", "Please enter valid numbers.")
+# Setup the GUI
+root = tk.Tk()
+root.title("BMI Calculator")
+# Labels and Entries
+tk.Label(root, text="Weight (kg):").pack()
+weight_entry = tk.Entry(root)
+weight_entry.pack()
+tk.Label(root, text="Height (m):").pack()
+height_entry = tk.Entry(root)
+height_entry.pack()
+# Calculate Button
+tk.Button(root, text="Calculate", command=calculate_bmi).pack()
+# Result Label
+result_label = tk.Label(root, text="BMI: ")
+result_label.pack()
+root.mainloop()
+
+========================================================================================
+
+* Pizza Ordering GUI form 
+CODE : 
+import tkinter as tk
+def calculate_total():
+    size = size_var.get()
+    toppings = topping_var.get()
+    prices = {"Small": 200, "Medium": 350, "Large": 500}  # Prices in INR
+    total = prices[size] + (toppings * 50)  # ₹50 per topping
+    result_label.config(text=f"Total: ₹{total:.2f}")
+# Create the main window
+root = tk.Tk()
+root.title("Pizza Order")
+# Pizza size selection
+size_var = tk.StringVar(value="Medium")
+tk.Label(root, text="Choose Size:").pack()
+for size in ["Small", "Medium", "Large"]:
+    tk.Radiobutton(root, text=size, variable=size_var, value=size).pack()
+# Toppings selection
+topping_var = tk.IntVar(value=0)
+tk.Label(root, text="Toppings:").pack()
+tk.Spinbox(root, from_=0, to=10, textvariable=topping_var).pack()
+# Calculate button
+tk.Button(root, text="Calculate", command=calculate_total).pack(pady=10)
+# Result label
+result_label = tk.Label(root, text="Total: ₹0.00")
+result_label.pack()
+root.mainloop()
+
+============================================================================
+
+
+
+Prac 11 
+* Snowfall Pygame
+
+import pygame 
+import random 
+pygame.init() 
+WHITE = [255, 255, 255] 
+GREEN = [0,255,0] 
+SIZE = [400, 400] 
+screen = pygame.display.set_mode(SIZE) 
+pygame.display.set_caption("Programming World of GFG") 
+snowFall = [] 
+for i in range(50): 
+x = random.randrange(0, 400) 
+y = random.randrange(0, 400) 
+snowFall.append([x, y]) 
+clock = pygame.time.Clock() 
+done = False 
+while not done: 
+for event in pygame.event.get():  
+if event.type == pygame.QUIT:  
+done = True 
+screen.fill(WHITE) 
+for i in range(len(snowFall)): 
+pygame.draw.circle(screen, GREEN, snowFall[i], 2) 
+snowFall[i][1] += 1 
+if snowFall[i][1] > 400: 
+y = random.randrange(-50, -10)
+snowFall[i][1] = y 
+x = random.randrange(0, 400) 
+snowFall[i][0] = x 
+pygame.display.flip() 
+clock.tick(20) 
+pygame.quit() 
+

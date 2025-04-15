@@ -1,0 +1,163 @@
+PRAC 2,3,4
+
+
+* Write A Program to Display 1 To 10 Numbers Demonstrate the use of Iterables And Iterators
+Program:-
+f=[1,2,3,4,5,6,7,8,9,10]
+#f is a container known as iterable
+for i in f:#iterables
+print(i)
+
+----------------------------------------------------------------------------------------------------
+Create A Dictionary With Students Name And Roll No .Insert At List 3 Records 
+Print Keys And Values From Dictionary Which Shows Use Of Iterators And Iterables 
+program:-
+
+d={'Atharv':'R01','Pranay':'R02','Nikit':'R03'}
+print("value of dictonary=")
+for i in d.values():
+print(i)
+print("key of dictonary=")
+for i in d.keys():
+print(i)
+
+------------------------------------------------------------------------------------------------------
+
+* Write A Python Program To Enter A Number That Is  Input From The User If Input Is Not A Number Then Handel The Exception
+Program :
+try:
+n=int(input("Enter the number="))
+except ValueError:
+print("Error: Not a Valid Number")
+else:
+print("Valid number",n)
+
+----------------------------------------------------------------------------------------------------
+
+*Write A Python Program To Read Content From File  Enter An Exception If File Does Not Exist
+
+Program: 
+try:
+f=open("abc.txt","r")
+s=f.read()
+print(s)
+except IOError:
+print("Error:Cannot Find File")
+else:
+print("Read File Sucessfully")
+f.close()
+
+--------------------------------------------------------------------------------------------------------
+
+* Write A Python Program To Compute 5/0 Catch The Exception Using Try Except Block.
+program:-
+try:
+x=5/0
+except ZeroDivisionError:
+print("Error:Cannot divide number by zero")
+else:
+print("x")
+--------------------------------------------------------------------------------------------------------
+
+* Write A Python Code To Write Content Into The File Using Try Finally Block. Program:-
+try:
+f=open("text.txt","w")
+f.write("This is my file for execution handaling")
+finally:
+print("File written successfully")
+f.close
+
+----------------------------------------------------------------------------------------------------------
+
+*Write A Python Program To Read Contain Of File With No Exception Name Program:-
+try:
+f=open("text.txt","w")
+s=f.read()
+except:
+print("cannot read the file because it is in write mode")
+else:
+print (s)
+f.close
+
+--------------------------------------------------------------------------------------------------------------
+
+* write a python program using multiple excwpt clause to read the file and displayline numbers
+Program :
+try:
+f=open("text.txt","r")
+s=f.readline()
+i=int(s.strip())
+except IOError: print("No such file")
+except ValueError: print("No valid integer")
+else:
+print(s)
+f.close
+
+--------------------------------------------------------------------------------------------------------------------
+PRAC 4: 
+AIM:- Write a Python Program to demonstrate exception handling using finally and raise keywords
+
+def divide(x, y): 
+    try: 
+        result = x // y 
+    except ZeroDivisionError: 
+        print("Sorry ! You are dividing by zero ") 
+    else:
+        print("Yeah ! Your answer is :", result) 
+    finally:  
+        # this block is always executed   
+        # regardless of exception generation.  
+        print('This is always executed')   
+divide(4, 2) 
+divide(3, 0)
+
+--------------------------------------------------------------------------------------------------
+
+Program 2
+print("Enter a Number to Print its Table: ", end="")
+try:
+    num = int(input())
+    print("\nTable of", num, ":")
+    for i in range(1, 11):
+        print(i*num)
+except ValueError:
+    print("\nInvalid Input.")
+finally:
+    print("\nProgram finished.")
+
+	
+---------------------------------------------------------------------------
+Program 3
+print("Enter a Positive Number: ", end="")
+try:
+    num = int(input())
+    if num<0:
+        raise Exception("Negative numbers aren't allowed.")
+except ValueError:
+    print("\nInvalid Input!")
+
+
+--------------------------------------------------------------------------
+
+Program 4
+print("Enter a Number: ")
+num = input()
+n=int(num)
+if type(n) is int:
+    print("Valid Input")
+else:
+    raise TypeError("Invalid Input!")
+
+--------------------------------------------------------------------------
+
+Program 5
+print("Enter a Number: ")
+num = input()
+if type(n) is int:
+    print("Valid Input")
+else:
+    raise TypeError("Invalid Input!")     
+   
+--------------------------------------------------------------------------
+
+

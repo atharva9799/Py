@@ -1,0 +1,44 @@
+PRAC 14,15
+
+
+* Write a program to create a display window using pygame.
+
+import pygame, sys
+from pygame.locals import *
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((400, 300))
+pygame.display.set_caption('Hello World!')
+while True: # main game loop
+for event in pygame.event.get():
+if event.type == QUIT:
+pygame.quit()
+sys.exit()
+pygame.display.update()
+
+=============================================================================
+
+Aim : Write a python program to demonstrate basic movements and key press using  pygame 
+CODE : 
+
+import pygame,sys 
+from pygame.locals import * 
+pygame.init() 
+DISPLAY=pygame.display.set_mode((400,300)) 
+pygame.display.set_caption('KeypressEvent') 
+exit_game=False 
+game_over=False 
+while not exit_game: 
+for event in pygame.event.get(): 
+if event.type == QUIT: 
+exit_game=True 
+pygame.quit() 
+sys.exit() 
+if event.type==pygame.KEYDOWN: 
+if event.key==pygame.K_RIGHT: 
+print("right arrow key pressed") 
+elif event.key==pygame.K_LEFT: 
+print("Left arrow key pressed ") 
+
+
+=========================================================================================================
+

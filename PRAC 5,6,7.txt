@@ -1,0 +1,225 @@
+PRAC 5,6,7
+
+Practical no: - 5
+Aim:- Write a Python Program to demonstrate the use of regular expressions using meta
+characters.
+1. use split function to split given function
+Program:-
+import re
+s="This is my first program"
+print(re.split(r'\s',s))
+
+
+================================RESTART================================
+
+2. write a python code to search given pattern from
+inputProgram:-
+import re
+str="I have nice car"
+print(re.split(r'[a-e]',str))
+
+
+================================RESTART================================
+
+3. write a program to match the full string from given
+inputProgram:-
+import re
+str = "Humans are intelligent than animals"
+# Use re.match to match the pattern
+s = re.match(r"(.*) are (.*?) .*", str, re.M | re.I)
+if s:
+print("Full string =", s.group()) # Print the full matched string
+print("First string =", s.group(1)) # Print the part before "are"
+print("Second string =", s.group(2)) # Print the part after "are"
+else:
+print("No match found")
+
+
+================================RESTART================================
+
+4. write a program to find digit, non-digit character, non-space character from given input
+Program:-
+import re
+ad="meera road,sector-10,pincode-410206"
+print("find digits")
+print(re.findall(r'\d',ad))
+print("nondigit charactors=")
+print(re.findall(r'\D',ad))
+print("space character")
+print(re.findall(r'\s',ad))
+================================RESTART================================
+
+
+PRAC 6
+
+CODE:
+1. write a python program to search full string using search
+function.Program;-
+
+import re
+str="Humans are intelligent than animals"
+s=re.search(r"(.*) are (.*?) .*",str,re.M|re.I)
+if s:
+print("full string=",s.group())
+print("First string=",s.group(1))
+print("Second string=",s.group(2))
+
+================================RESTART==========================
+
+2. write a program to find a substring using match
+function.Program:-
+import re
+str="Humans are intelligent than animals"
+s=re.match(r"intelligent",str,re.M|re.I)
+if s:
+print("Match found")
+else:
+print("No match found")
+
+===========================RESTART==========================
+
+
+3. write a program to find a substring using search
+function.Program:-
+import re
+str="Humans are intelligent than animals"
+s=re.search(r"intelligent",str,re.M|re.I)
+if s:
+print("Match found")
+else:
+print("No match found")
+================================RESTART==========================
+
+
+4. write a program to find a pattern such as a sring that is followed by 0 or
+more BProgram:-
+
+import re
+def tm(text):
+pattern = 'ab*?'
+s = re.search(pattern, text)
+if s:
+return 'Match found'
+else:
+return 'Match not found'
+# The print statements should be outside the function, 
+so they are executed after calling the
+function
+print(tm("ab"))
+print(tm("abb"))
+print(tm("a"))
+print(tm("cd"))
+
+================================RESTART==========================
+
+PRAC 7
+------------
+
+Create a line using tkinter module.
+Code :
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+a.pack()
+a.create_line(20,50,100,50)
+mainloop()
+
+===================================================================================
+• Write a program to draw two lines of same colour and intersect at same
+point.
+CODE :
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+a.pack()
+a.create_line(10,10,100,70,fill='red')
+a.create_line(10,10,90,80,fill='blue')
+a.create_line(10,10,80,90,fill='green')
+a.create_line(10,10,70,100,fill='yellow')
+mainloop()
+=====================================================================================
+
+• Write a program to draw a rectangle.
+CODE:
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+a.pack()
+a.create_rectangle(15,25,150,75)
+mainloop()
+
+=====================================================================================
+• Write a program to draw a rectangle with pink colour and
+display message in it.
+CODE :
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+a.pack()
+a.create_rectangle(15,25,150,75,fill='pink')
+a.create_text(100,50,text="CKT",fill='black')
+mainloop()
+
+======================================================================================
+• Write a program to draw two rectangles yellow and green
+overlapping with eachother.
+CODE :
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+a.pack()
+a.create_rectangle(15,25,150,75,fill='yellow')
+a.create_rectangle(70,50,180,200,fill='green')
+mainloop()
+
+=======================================================================================
+• Write a program to create a oval.
+CODE :
+from tkinter import *
+root=Tk()
+a=Canvas(root,width=200,height=200)
+
+a.pack()
+a.create_oval(50,25,150,80)
+mainloop()
+
+=========================================================================================
+• Write a program to create a smiley face.
+CODE:
+from tkinter import *
+# Create the main window
+root = Tk()
+root.title("Smiley Face")
+# Create a canvas widget to draw the smiley face
+a = Canvas(root, width=200, height=200)
+a.pack()
+# Draw the face (yellow circle)
+a.create_oval(20, 20, 180, 180, fill='yellow', outline='black')
+# Draw the left eye (blue circle)
+a.create_oval(50, 60, 90, 100, fill='blue', outline='black')
+# Draw the right eye (blue circle)
+a.create_oval(110, 60, 150, 100, fill='blue', outline='black')
+# Draw the smile (arc representing a smiling mouth)
+a.create_arc(50, 120, 150, 160, start=0, extent=-180, style=ARC, width=3,
+outline='red')
+# Run the Tkinter event loop
+root.mainloop()
+==========================================================================================
+
+• Write a python program to create a house.
+CODE :
+
+from tkinter import *
+# Create the main window
+root = Tk()
+root.title("Simple House")
+canvas = Canvas(root, width=500, height=400)
+canvas.pack()
+canvas.create_rectangle(100, 150, 300, 300, fill='yellow', outline='black')
+canvas.create_polygon(100, 150, 200, 50, 300, 150, fill='brown',
+outline='black')
+canvas.create_rectangle(180, 230, 220, 300, fill='saddlebrown', outline='black')
+canvas.create_rectangle(130, 170, 170, 210, fill='lightblue', outline='black')
+canvas.create_rectangle(230, 170, 270, 210, fill='lightblue', outline='black')
+
+root.mainloop()
